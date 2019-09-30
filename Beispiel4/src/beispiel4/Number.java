@@ -11,13 +11,56 @@ package beispiel4;
  */
 public class Number
 {
+    private double a;
+    private double b;
+    //getter und setter 
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
+    public double getA()
     {
-        // TODO code application logic here
+        return a;
+    }
+
+    public double getB()
+    {
+        return b;
+    }
+
+    public void setA(double a)
+    {
+        this.a = a;
+    }
+
+    public void setB(double b)
+    {
+        this.b = b;
     }
     
+    
+    
+    public interface CalculationOperation{
+        Number calc(Number x, Number y);
+    }
+
+    /**
+     *
+     */
+    public abstract class AbstractCalculator{
+        protected CalculationOperation add;
+        protected CalculationOperation subtract;
+        protected CalculationOperation multiply;
+        protected CalculationOperation divide;
+        
+        public AbstractCalculator(Number.CalculationOperation add, 
+                Number.CalculationOperation subtract, 
+                Number.CalculationOperation multiply, 
+                Number.CalculationOperation divide){}
+                
+                public abstract Number add(Number a, Number b);
+                public abstract Number subtract(Number a, Number b);
+                public abstract Number multiply(Number a, Number b);
+                public abstract Number divide(Number a, Number b);
+                }
 }
+
+
+

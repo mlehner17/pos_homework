@@ -103,6 +103,19 @@ public class NumberTester
 //                    System.out.println("Kein Palindrom");
 //                }
         
+        NumberTest isPalindrom = ((n) -> {
+             String intStr = String.valueOf(n); 
+            return intStr.equals(new StringBuilder(intStr).reverse().toString());
+        });
+        if(isPalindrom.testNumber(bob2)==true)
+        {
+            System.out.println("Palindrom");
+        }
+        else
+        {
+            System.out.println("Kein Palindrom");
+        }
+        
     }
 
     public void testFile()
@@ -184,6 +197,7 @@ public class NumberTester
 //                {
 //                    System.out.println("Kein Palindrom");
 //                }
+                setPalindromeTester();
             }
         }
     }
