@@ -5,6 +5,8 @@
  */
 package beispiel3;
 
+import com.sun.media.sound.SoftAbstractResampler;
+
 /**
  *
  * @author lehne
@@ -14,6 +16,6 @@ public class Main
     public static void main(String[] args)
     {
         NumberTester nt = new NumberTester("dokument.txt");
-        nt.trimFile();
+        nt.testFile(); 
     }
 }

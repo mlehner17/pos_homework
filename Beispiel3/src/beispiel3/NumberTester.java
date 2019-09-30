@@ -26,10 +26,11 @@ public class NumberTester
     static String Zeile;
     List<String> arL = new ArrayList<>();
     String[] ar;
+    int bob;
+    int bob2;
 
     public interface NumberTest
     {
-
         boolean testNumber(int number);
     }
 
@@ -38,7 +39,73 @@ public class NumberTester
         this.fileName = fileName;
     }
 
-    public void trimFile()
+
+
+    public void setOddEvenTester(/*NumberTest oddTester*/)
+    {
+//        if (bob2 % 2 == 0)
+//                {
+//                    System.out.println("Gerade");
+//                } else
+//                {
+//                    System.out.println("Ungerade");
+//                }
+        NumberTest isEven = (n) -> (n % 2) == 0;
+        if(isEven.testNumber(bob2)==true)
+        {
+            System.out.println("Gerade");
+        }
+        else 
+        {
+            System.out.println("Ungerade");
+        }
+        
+    }
+
+    public void setPrimeTester(/*NumberTest primeTester*/)
+    {
+//                if (bob2 < 2)
+//                {
+//                    System.out.println("Keine Primzahl");
+//                } else if (bob2 % 2 == 0)
+//                {
+//                     System.out.println("Keine Primzahl"); 
+//                }
+//                else
+//                {
+//                    System.out.println("Primzahl");
+//                }
+        NumberTest isPrime = (n) -> ((n<2)||((n%2)==0));
+        if (isPrime.testNumber(bob2)==true)
+        {
+            System.out.println("Keine Primzahl");
+        }
+        else
+        {
+            System.out.println("Primzahl");
+        }
+    }
+
+    public void setPalindromeTester(/*NumberTest palindromeTester*/)
+    {
+//        String str = "" + bob2;
+//                String result = "";
+//                for (int x = str.length() - 1; x >= 0; x--)
+//                {
+//                    result += str.charAt(x);
+//                }
+//
+//                if (result.equals(str))
+//                {
+//                    System.out.println("Palindrom");
+//                } else
+//                {
+//                    System.out.println("Kein Palindrom");
+//                }
+        
+    }
+
+    public void testFile()
     {
         File file = new File(fileName);
         if (file.exists())
@@ -72,87 +139,53 @@ public class NumberTester
             System.out.println("Datei wurde nicht gefunden.");
         }
 
-        for (int i = 1; i < arL.size()-1; i++)
+        for (int i = 1; i < arL.size(); i++)
         {
             ar = arL.get(i).split(" ");
-            int bob = Integer.parseInt(ar[0]);
-            int bob2 = Integer.parseInt(ar[1]);
+            bob = Integer.parseInt(ar[0]);
+            bob2 = Integer.parseInt(ar[1]);
             if (bob == 1)
             {
-                if (bob2 % 2 == 0)
-                {
-                    System.out.println("Gerade");
-                } else
-                {
-                    System.out.println("Ungerade");
-                }
+//                if (bob2 % 2 == 0)
+//                {
+//                    System.out.println("Gerade");
+//                } else
+//                {
+//                    System.out.println("Ungerade");
+//                }
+                 setOddEvenTester();
             } else if (bob == 2)
             {
-                if (bob2 < 2)
-                {
-                    System.out.println("Keine Primzahl");;
-                } else
-                {
-                    for (int y = 2; y < bob2; y++)
-                    {
-                        if (bob2 % y == 0)
-                        {
-                            System.out.println("Keine Primzahl");;
-                        }
-                    }
-                }
-                System.out.println("Primzahl");;
+//                if (bob2 < 2)
+//                {
+//                    System.out.println("Keine Primzahl");
+//                } else if (bob2 % 2 == 0)
+//                {
+//                     System.out.println("Keine Primzahl"); 
+//                }
+//                else
+//                {
+//                    System.out.println("Primzahl");
+//                }
+                setPrimeTester();
             } else if (bob == 3)
             {
-                String str = "" + bob2;
-                String result = "";
-                for (int x = str.length() - 1; x >= 0; x--)
-                {
-                    result += str.charAt(i);
-                }
-
-                if (result.equals(str))
-                {
-                    System.out.println("Palindrom");
-                } else
-                {
-                    System.out.println("Kein Palindrom");
-                }
+//                String str = "" + bob2;
+//                String result = "";
+//                for (int x = str.length() - 1; x >= 0; x--)
+//                {
+//                    result += str.charAt(x);
+//                }
+//
+//                if (result.equals(str))
+//                {
+//                    System.out.println("Palindrom");
+//                } else
+//                {
+//                    System.out.println("Kein Palindrom");
+//                }
             }
         }
-    }
-
-//    public boolean isPrime(int p) 
-//    {
-//        if (p < 2) {
-//    return false;
-//        } else {
-//        for (int i = 2; i < p; i++) {
-//        if (p % i == 0) {
-//        return false;
-//    }
-//    }
-//    }
-//        return true;
-//    }
-    public void setOddEvenTester(NumberTest oddTester)
-    {
-
-    }
-
-    public void setPrimeTester(NumberTest primeTester)
-    {
-
-    }
-
-    public void setPalindromeTester(NumberTest palindromeTester)
-    {
-
-    }
-
-    public void testFile()
-    {
-
     }
 
 }
