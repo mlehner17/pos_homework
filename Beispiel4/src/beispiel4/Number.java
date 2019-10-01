@@ -13,6 +13,7 @@ public class Number
 {
     private double a;
     private double b;
+    private double x;
     //getter und setter 
 
     public double getA()
@@ -35,31 +36,11 @@ public class Number
         this.b = b;
     }
     
-    
+  
     
     public interface CalculationOperation{
         Number calc(Number x, Number y);
     }
-
-    /**
-     *
-     */
-    public abstract class AbstractCalculator{
-        protected CalculationOperation add;
-        protected CalculationOperation subtract;
-        protected CalculationOperation multiply;
-        protected CalculationOperation divide;
-        
-        public AbstractCalculator(Number.CalculationOperation add, 
-                Number.CalculationOperation subtract, 
-                Number.CalculationOperation multiply, 
-                Number.CalculationOperation divide){}
-                
-                public abstract Number add(Number a, Number b);
-                public abstract Number subtract(Number a, Number b);
-                public abstract Number multiply(Number a, Number b);
-                public abstract Number divide(Number a, Number b);
-                }
 }
 
 
